@@ -1,0 +1,8 @@
+<div class="sidebar">
+  <h2>Our Products</h2>
+  <div class="products">
+    @for (product of productsData; track product; let i = $index) {
+      <span (click)="active = i" [ngClass]="active == i ? 'active' : ''">{{product}}</span>
+    }
+  </div>
+</div>

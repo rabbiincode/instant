@@ -1,0 +1,43 @@
+.sidebar{
+  position: fixed;
+  background: var(--sidebar-bg);
+  height: 100vh;
+  width: 18.75rem;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  & h2{
+    font-size: 1.3rem !important;
+    border-bottom: 0.0625rem solid var(--bg-border);
+    padding: 0.3rem 2rem 1.1rem;
+  }
+  .products{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 100%;
+    &::-webkit-scrollbar{
+      width: 0;
+    }
+    &::-webkit-scrollbar-track{
+      background: transparent;
+    }
+    &:hover{
+      &::-webkit-scrollbar{
+        width: 0.5rem;
+      }
+    }
+    & span{
+      color: var(--desc);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 1.2rem 2rem;
+    }
+    & span:hover, .active{
+      background: var(--bg);
+      color: var(--text);
+    }
+  }
+}

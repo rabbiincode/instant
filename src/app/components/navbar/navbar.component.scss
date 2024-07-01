@@ -1,0 +1,82 @@
+.navbar{
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 500;
+  padding: 1.2rem 1.5rem;
+  .menu{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .logo{
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    & mat-icon{
+      cursor: pointer;
+    }
+  }
+  .search{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 0.5;
+    & form{
+      display: flex;
+      align-items: center;
+      flex: 0.8;
+      border: 0.0625rem solid var(--button-border);
+      border-radius: 0.5rem;
+      padding-left: 0.7rem;
+      & input{
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 0.7rem;
+        border-radius: 0.5rem;
+        &::placeholder, .none1{
+          color: var(--text);
+          font-size: 1.2rem;
+          opacity: 0.5;
+        }
+      }
+      span{
+        font-size: 2rem;
+        border-left: 0.0625rem solid var(--button-border);
+        border-radius: 0 0.5rem 0.5rem 0;
+        cursor: pointer;
+        padding: 0.15rem 0.7rem 0.35rem 0.5rem;
+        &:hover{
+          background: var(--bg);
+        }
+      }
+    }
+    & button{
+      background: var(--color);
+      color: var(--text1);
+      border-radius: 0.5rem;
+      padding: 0.8rem;
+    }
+  }
+  .profile{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .user{
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      cursor: pointer;
+      & span{
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+    }
+    & mat-icon{
+      cursor: pointer;
+    }
+  }
+}

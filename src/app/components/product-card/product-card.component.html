@@ -1,0 +1,33 @@
+<div class="cards animate__animated animate__fadeIn animate__slower">
+  @if (currentProducts) {
+    <div class="content">
+        @for (product of currentProducts; track $index){
+          <div class="card">
+            <div (click)="productDetails(product?.id)" class="text">
+              <div class="image">
+                <img [src]="product?.thumbnail" alt="img" class="banner">
+                <span>-{{product?.discountPercentage}}%</span>
+              </div>
+              <h1 [innerHTML]="product?.title" class="title"></h1>
+              <div class="price">{{product?.price | currency}} <span>{{product?.price / (1 - (product?.discountPercentage / 100)) | currency}}</span></div>
+              <div [innerHTML]="product?.description" class="overview"></div>
+              <div class="stock">Status: {{product?.availabilityStatus}}</div>
+            </div>
+            <div class="buttons">
+              <button (click)="addToCart(product?.id)" class="add">Add to cart</button>
+              <button (click)="save(product?.id)" class="edit">Save for later</button>
+            </div>
+          </div>
+        }
+      </div>
+      <div class="paginate">
+        <mat-icon *ngIf="currentPage > 1" (click)="navigateBack()" class="icon arrow">chevron_left</mat-icon>
+        <span *ngFor="let page of renderPagination()" (click)="handlePageNavigation(page)" [ngClass]="page == currentPage ? 'active' : ''">{{page}}</span>
+        <mat-icon *ngIf="currentPage < totalPages" (click)="navigateForward()" class="icon arrow">chevron_right</mat-icon>
+        <mat-icon *ngIf="totalPages == 1" class="arrow">chevron_right</mat-icon>
+      </div>
+    }
+    @if (loading) {
+      <img src="/assets/gif/loading.gif" alt="loading..." class="loader"/>
+    }
+</div>

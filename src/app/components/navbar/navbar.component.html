@@ -1,0 +1,23 @@
+<div class="navbar">
+  <div class="menu">
+    <span class="logo">Instant</span>
+    <mat-icon (click)="sidebarToggle()">menu</mat-icon>
+  </div>
+  <div class="search">
+    <form>
+      <mat-icon>search</mat-icon>
+      <input placeholder="Search" type="text" name="search" [(ngModel)]="searchValue"/>
+      @if (searchValue) {
+        <span (click)="searchValue = ''">×</span>
+      }
+    </form>
+    <button>Search</button>
+  </div>
+  <div class="profile">
+    <div class="user">
+      <mat-icon>person</mat-icon>
+      <span>Account <mat-icon>expand_more</mat-icon></span>
+    </div>
+    <mat-icon routerLink="/cart" matTooltip="Go to Cart">shopping_cart</mat-icon>
+  </div>
+</div>

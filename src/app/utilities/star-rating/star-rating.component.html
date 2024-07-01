@@ -1,0 +1,8 @@
+<div class="star-rating">
+  @for (star of stars; track $index) {
+    <mat-icon>star</mat-icon>
+  }
+  @if(rating % 1 !== 0) {
+    <mat-icon>star_half</mat-icon>
+  }
+</div>

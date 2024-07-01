@@ -1,0 +1,31 @@
+section{
+  .home{
+    margin-left: 18.75rem;
+  }
+}
+
+@media(min-width: 768px){
+  section{
+    .full{
+      margin-left: 0;
+    }
+    .none{
+      display: none;
+    }
+  }
+}
+
+@media(max-width: 768px){
+  section{
+    .sidebar{
+      display: none;
+    }
+    .home{
+      width: 100%;
+      margin-left: 0;
+    }
+    .show{
+      display: block;
+    }
+  }
+}
