@@ -63,6 +63,23 @@ h1, h2, h3, h4, h5, h6{
   width: 3.5rem;
 }
 
+.loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fe9a9a;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.highlight{
+  background: var(--highlight);
+  font-size: 1.3rem !important;
+  font-weight: 500;
+}
+
 /* width */
 ::-webkit-scrollbar{
   width: 0.625rem;
@@ -129,5 +146,3 @@ h1, h2, h3, h4, h5, h6{
     font-size: clamp(0.9px, 1.7px, 3.7px);
   }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,11 +1,12 @@
 <app-header></app-header>
-<app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
+<app-navbar (searchProduct)="search($event)" (toggleSidebar)="toggleSidebar()"></app-navbar>
 <section>
   <div [ngClass]="sidebar ? 'show' : ''" [ngClass]="!full ? 'none' : ''" class="sidebar">
-    <app-sidebar></app-sidebar>
+    <app-sidebar (setTitle)="setTitle($event)"></app-sidebar>
   </div>
   <div [ngClass]="!full ? 'full' : ''"  [ngClass]="!full ? 'full' : ''" class="home">
-    <app-products></app-products>
+    <p>{{title}}</p>
+    <app-products [searchValue]="searchValue"></app-products>
   </div>
 </section>
 <app-scroll-to-top></app-scroll-to-top>

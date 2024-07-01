@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 500;
-  padding: 1.2rem 1.5rem;
+  padding: 1.2rem 2rem;
   .menu{
     display: flex;
     align-items: center;
@@ -35,7 +35,6 @@
         width: 100%;
         font-size: 1.2rem;
         padding: 0.7rem;
-        border-radius: 0.5rem;
         &::placeholder, .none1{
           color: var(--text);
           font-size: 1.2rem;
@@ -63,7 +62,7 @@
   .profile{
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     .user{
       display: flex;
       align-items: center;
@@ -75,8 +74,48 @@
         font-size: 1.2rem;
       }
     }
+    .cart{
+      position: relative;
+      & span{
+        position: absolute;
+        top: -1rem;
+        right: -0.7rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+    }
+    .small{
+      display: none;
+    }
     & mat-icon{
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1200px){
+  .navbar{
+    .search{
+      flex: 0.8;
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .navbar{
+    .search, .hide{
+      display: none !important;
+    }
+    .show{
+      display: block !important;
+      & button{
+        display: none;
+      }
+    }
+    .profile{
+      .small{
+        display: block;
+      }
     }
   }
 }

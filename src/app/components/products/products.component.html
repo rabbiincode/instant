@@ -1,1 +1,5 @@
-<app-product-card [products]="products"></app-product-card>
+@if (products.length != 0) {
+  <app-product-card [products]="products" [searchValue]="searchValue"></app-product-card>
+} @else {
+  <p class="loading">Fetching Products__please wait...</p>
+}

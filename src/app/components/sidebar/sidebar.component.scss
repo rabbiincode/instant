@@ -3,9 +3,11 @@
   background: var(--sidebar-bg);
   height: 100vh;
   width: 18.75rem;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 500;
+  z-index: 400;
+  padding: 8rem 0 0;
   & h2{
     font-size: 1.3rem !important;
     border-bottom: 0.0625rem solid var(--bg-border);

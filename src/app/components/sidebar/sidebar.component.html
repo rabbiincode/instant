@@ -2,7 +2,7 @@
   <h2>Our Products</h2>
   <div class="products">
     @for (product of productsData; track product; let i = $index) {
-      <span (click)="active = i" [ngClass]="active == i ? 'active' : ''">{{product}}</span>
+      <span (click)="setActive(i, product.title, product.category)" [ngClass]="active == i ? 'active' : ''">{{product.title}}</span>
     }
   </div>
 </div>

@@ -1,7 +1,7 @@
-<div class="details">
+<section class="details">
   <app-header></app-header>
   <app-navbar></app-navbar>
-  @if (!fetchingData){
+  @if (!loading){
     <div class="detail">
       <div class="image">
         <img [src]="productDetail?.thumbnail" alt="img" class="url">
@@ -25,18 +25,14 @@
         <p>Review: <span>{{productDetail?.reviews?.length}} Reviews</span></p>
       </div>
 
-      <div class="read">
-        <!-- <p class="not-found not-found1">Product(s) not found...</p> -->
-      </div>
-
       <div class="buttons">
-        <button class="add">Add to cart</button>
-        <button class="add back"><mat-icon class="arrow">navigate_before</mat-icon>Back</button>
+        <button (click)="addToCart(productDetail?.id)" class="add">Add to cart</button>
+        <button (click)="back()" class="add back"><mat-icon class="arrow">navigate_before</mat-icon>Back</button>
       </div>
       <app-scroll-to-top></app-scroll-to-top>
     </div>
   }
-  @if (fetchingData){
+  @if (loading){
     <img src="/assets/gif/loading.gif" alt="loading..." class="loader"/>
   }
-</div>
+</section>

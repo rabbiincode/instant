@@ -1,6 +1,11 @@
 section{
   .home{
     margin-left: 18.75rem;
+    & p{
+      font-size: 1.5rem;
+      font-weight: 500;
+      padding:  0 2rem;
+    }
   }
 }
 

@@ -3,21 +3,25 @@
     <span class="logo">Instant</span>
     <mat-icon (click)="sidebarToggle()">menu</mat-icon>
   </div>
-  <div class="search">
-    <form>
+  <div [ngClass]="showSearch ? 'show' : ''" class="search">
+    <form (ngSubmit)="search()">
       <mat-icon>search</mat-icon>
       <input placeholder="Search" type="text" name="search" [(ngModel)]="searchValue"/>
       @if (searchValue) {
         <span (click)="searchValue = ''">×</span>
       }
     </form>
-    <button>Search</button>
+    <button (click)="search()">Search</button>
   </div>
   <div class="profile">
-    <div class="user">
+    <mat-icon (click)="showSearch = !showSearch" class="small">search</mat-icon>
+    <div [ngClass]="showSearch ? 'hide' : ''" class="user">
       <mat-icon>person</mat-icon>
       <span>Account <mat-icon>expand_more</mat-icon></span>
     </div>
-    <mat-icon routerLink="/cart" matTooltip="Go to Cart">shopping_cart</mat-icon>
+    <div [ngClass]="showSearch ? 'hide' : ''" class="cart">
+      <mat-icon (click)="handleCart()" [matTooltip]="currentRoute.includes('cart') ? 'Clear cart' : 'Go to Cart'">{{currentRoute.includes('cart') ? 'remove_shopping_cart' : 'shopping_cart'}}</mat-icon>
+      <span>{{itemsInCart}}</span>
+    </div>
   </div>
 </div>
